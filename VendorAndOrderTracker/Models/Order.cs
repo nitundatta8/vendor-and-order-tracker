@@ -20,6 +20,10 @@ namespace VendorAndOrderTracker.Models
       _orderList.Add(this);
       OrderId = _orderList.Count;
     }
+    public static void ClearAll()
+    {
+      _orderList.Clear();
+    }
   }
 
 

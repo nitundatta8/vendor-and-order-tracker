@@ -5,8 +5,12 @@ using System;
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class OrderTest
+  public class OrderTest : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -36,6 +40,15 @@ namespace VendorAndOrderTracker.Tests
       Order newOrder = new Order("Bread", "White", 2, "5-22-2020");
       int result = newOrder.OrderId;
       Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsAllOrderObjects_OredrList()
+    {
+      Order newOrder = new Order("Bread", "White", 2, "5-22-2020");
+      Order newOrder1 = new Order("Pastry", "Croissants ", 3, "5-22-2020");
+      List<Order> list = new List<Order> { newOrder, newOrder1 };
+      List<Order> result = Order.GetAllOrder();
+      CollectionAssert.AreEqual(list, result);
     }
   }
 }
