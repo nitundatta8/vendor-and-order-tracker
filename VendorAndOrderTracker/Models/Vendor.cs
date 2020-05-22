@@ -24,5 +24,9 @@ namespace VendorAndOrderTracker.Models
     {
       return _vendorList;
     }
+    public static Vendor Find(int searchId)
+    {
+      return _vendorList[searchId - 1];
+    }
   }
 }
