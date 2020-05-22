@@ -69,7 +69,7 @@ namespace VendorAndOrderTracker.Tests
       Order newOrder = new Order("Bread", "White", 2, "5-22-2020");
       List<Order> newList = new List<Order> { newOrder };
       Vendor newVendor = new Vendor("Suzie's Cafe", "Bellevue");
-      newVendor.AddOrders(newOrder);
+      newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.Orders;
       CollectionAssert.AreEqual(newList, result);
 
