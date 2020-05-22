@@ -21,8 +21,17 @@ namespace VendorAndOrderTracker.Tests
       Vendor newVendor = new Vendor(name, describtion);
       string result = newVendor.VendorName;
       string result1 = newVendor.Description;
-      Assert.AreEqual("Moli's cafe", result);
-      Assert.AreEqual("city", result1);
+      Assert.AreEqual(name, result);
+      Assert.AreEqual(describtion, result1);
+    }
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      string name = "Suzie's Cafe";
+      string describtion = "Bellevue";
+      Vendor newVendor = new Vendor(name, describtion);
+      int result = newVendor.Id;
+      Assert.AreEqual(1, result);
     }
 
   }

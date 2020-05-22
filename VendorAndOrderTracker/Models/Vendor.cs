@@ -7,13 +7,13 @@ namespace VendorAndOrderTracker.Models
     public string VendorName { get; set; }
     public string Description { get; set; }
     private static List<Vendor> _vendorList = new List<Vendor>();
-    // public int Id { get; }
+    public int Id { get; }
     public Vendor(string name, string description)
     {
       VendorName = name;
       Description = description;
-      // _vendorList.Add(this);
-      // Id = _vendorList.Count;
+      _vendorList.Add(this);
+      Id = _vendorList.Count;
     }
   }
 }
