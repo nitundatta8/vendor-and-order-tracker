@@ -42,14 +42,26 @@ namespace VendorAndOrderTracker.Tests
     {
       string name = "Suzie's Cafe";
       string describtion = "Bellevue";
-      Vendor newVendor = new Vendor(name, describtion);
       string name1 = "France's Cafe";
       string describtion1 = "Bellevue";
+      Vendor newVendor = new Vendor(name, describtion);
       Vendor newVendor1 = new Vendor(name1, describtion1);
-      List<Vendor> list = new List<Vendor>() { newVendor, newVendor1 };
-      List<Vendor> result = Vendor.GetAll();
-      Assert.AreEqual(list, result);
+      List<Vendor> newList = new List<Vendor>() { newVendor, newVendor1 };
+      List<Vendor> result1 = Vendor.GetAll();
+      CollectionAssert.AreEqual(newList, result1);
 
+    }
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      string name = "Suzie's Cafe";
+      string describtion = "Bellevue";
+      string name1 = "France's Cafe";
+      string describtion1 = "Bellevue";
+      Vendor newVendor = new Vendor(name, describtion);
+      Vendor newVendor1 = new Vendor(name1, describtion1);
+      Vendor result = Vendor.Find(2);
+      Assert.AreEqual(newVendor1, result);
     }
 
   }

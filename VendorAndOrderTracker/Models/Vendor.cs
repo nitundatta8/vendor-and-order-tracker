@@ -6,7 +6,7 @@ namespace VendorAndOrderTracker.Models
   {
     public string VendorName { get; set; }
     public string Description { get; set; }
-    private static List<Vendor> _vendorList = new List<Vendor>();
+    private static List<Vendor> _vendorList = new List<Vendor>() { };
     public int Id { get; }
     public Vendor(string name, string description)
     {
@@ -19,6 +19,10 @@ namespace VendorAndOrderTracker.Models
     public static void ClearAll()
     {
       _vendorList.Clear();
+    }
+    public static List<Vendor> GetAll()
+    {
+      return _vendorList;
     }
   }
 }
