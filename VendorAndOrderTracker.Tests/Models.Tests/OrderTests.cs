@@ -25,10 +25,17 @@ namespace VendorAndOrderTracker.Tests
       string resultDes = order.OrderDescription;
       int resultPrice = order.Price;
       string resultDate = order.Date;
-      Assert.AreEqual("title", resultTitle);
-      Assert.AreEqual("description", resultDes);
-      Assert.AreEqual(1, resultPrice);
-      Assert.AreEqual("date", resultDate);
+      Assert.AreEqual(title, resultTitle);
+      Assert.AreEqual(description, resultDes);
+      Assert.AreEqual(2, resultPrice);
+      Assert.AreEqual(date, resultDate);
+    }
+    [TestMethod]
+    public void GetId_ReturnsVendorId_Int()
+    {
+      Order newOrder = new Order("Bread", "White", 2, "5-22-2020");
+      int result = newOrder.OrderId;
+      Assert.AreEqual(1, result);
     }
   }
 }
