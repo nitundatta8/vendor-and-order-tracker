@@ -24,6 +24,15 @@ namespace VendorAndOrderTracker.Models
     {
       _orderList.Clear();
     }
+    public static List<Order> GetAllOrder()
+    {
+      return _orderList;
+    }
+    public static Order Find(int searchId)
+    {
+      return _orderList[searchId - 1];
+    }
+
   }
 
 
