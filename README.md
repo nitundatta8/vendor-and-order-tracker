@@ -24,6 +24,16 @@ _A web application to help a user track the vendors that purchase baked goods fr
 1. The user can add vendors to a list.
   * Input: Select Add Vendors
   * Output: Updated vendor list appears, new vendor added
+2. The user can select a vendor from a list created.
+  * Input: Select Vendor
+  * Output: Vendor details displays.
+3. The user can add orders for a selected vendor.
+  * Input: Select Add Order
+  * Output: Updated order list appears.
+4. The user can select order from a selected vendor		
+  * Input: Select Order
+  * Output: Selected order displays.  
+
 
 
 ## Known Bugs
