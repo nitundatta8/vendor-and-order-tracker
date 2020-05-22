@@ -1,6 +1,6 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
-using VendorAndOrderTracker.Models;
+
 
 
 namespace VendorAndOrderTracker
@@ -15,8 +15,8 @@ namespace VendorAndOrderTracker
         .UseIISIntegration()
         .UseStartup<Startup>()
         .Build();
-      
+
       host.Run();
     }
   }
-} 
+}
