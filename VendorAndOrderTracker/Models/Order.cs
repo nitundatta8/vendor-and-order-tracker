@@ -8,7 +8,7 @@ namespace VendorAndOrderTracker.Models
     public string OrderDescription { get; set; }
     public int Price { get; set; }
     public string Date { get; set; }
-    public int OrderId { get; }
+    public int Id { get; }
     private static List<Order> _orderList = new List<Order>() { };
 
     public Order(string title, string description, int price, string date)
@@ -18,7 +18,7 @@ namespace VendorAndOrderTracker.Models
       Price = price;
       Date = date;
       _orderList.Add(this);
-      OrderId = _orderList.Count;
+      Id = _orderList.Count;
     }
     public static void ClearAll()
     {

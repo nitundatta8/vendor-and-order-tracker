@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using VendorAndOrderTracker.Models;
+using System;
 
 namespace VendorAndOrderTracker.Controllers
 {
@@ -17,7 +18,7 @@ namespace VendorAndOrderTracker.Controllers
     {
       return View();
     }
-    [HttpPost("/vendors")] // Creates categories
+    [HttpPost("/vendors")]
     public ActionResult Create(string vendorName, string vendorDescription)
     {
       Vendor newVendor = new Vendor(vendorName, vendorDescription);

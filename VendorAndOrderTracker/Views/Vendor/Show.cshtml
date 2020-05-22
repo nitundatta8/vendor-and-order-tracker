@@ -4,13 +4,13 @@
 @using VendorAndOrderTracker.Models;
 <h3>Here are all orders:</h3>
 
-@* <ol>
-  @foreach (var music in @Model["order"])  
+<ol>
+  @foreach (var order in @Model["order"])  
   {
-    //<li><a href='/vendors/@Model["vendor"].Id/order/@order.OrderId'>@order.Title</a></li> 
+    <li><a href='/vendors/@Model["vendor"].Id/order/@order.Id'>@order.Title</a></li> 
       
       
   }
-</ol> *@
+</ol>
 
 <p><a href='/vendors/@Model["vendor"].Id/order/new'>Add order</a></p>
