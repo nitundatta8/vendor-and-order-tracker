@@ -38,7 +38,7 @@ namespace VendorAndOrderTracker.Tests
     public void GetId_ReturnsVendorId_Int()
     {
       Order newOrder = new Order("Bread", "White", 2, "5-22-2020");
-      int result = newOrder.OrderId;
+      int result = newOrder.Id;
       Assert.AreEqual(1, result);
     }
     [TestMethod]
