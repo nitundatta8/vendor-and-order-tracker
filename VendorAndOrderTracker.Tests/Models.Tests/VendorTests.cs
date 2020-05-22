@@ -5,8 +5,12 @@ using System;
 namespace VendorAndOrderTracker.Tests
 {
   [TestClass]
-  public class VendorTest
+  public class VendorTest : IDisposable
   {
+    public void Dispose()
+    {
+      Vendor.ClearAll();
+    }
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -32,6 +36,20 @@ namespace VendorAndOrderTracker.Tests
       Vendor newVendor = new Vendor(name, describtion);
       int result = newVendor.Id;
       Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnsAllVendorObjects_VendorList()
+    {
+      string name = "Suzie's Cafe";
+      string describtion = "Bellevue";
+      Vendor newVendor = new Vendor(name, describtion);
+      string name1 = "France's Cafe";
+      string describtion1 = "Bellevue";
+      Vendor newVendor1 = new Vendor(name1, describtion1);
+      List<Vendor> list = new List<Vendor>() { newVendor, newVendor1 };
+      List<Vendor> result = Vendor.GetAll();
+      Assert.AreEqual(list, result);
+
     }
 
   }
