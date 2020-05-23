@@ -37,7 +37,6 @@ namespace VendorAndOrderTracker.Controllers
     [HttpPost("/vendors/{vendorId}/order")]
     public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderPrice, string orderDate)
     {
-      Console.WriteLine(orderTitle + "  " + orderPrice);
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
       Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
@@ -46,6 +45,12 @@ namespace VendorAndOrderTracker.Controllers
       model.Add("order", categoryOrder);
       model.Add("vendor", foundVendor);
       return View("Show", model);
+    }
+    [HttpPost("/vendors/delete")]
+    public ActionResult DeleteAll()
+    {
+      Vendor.ClearAll();
+      return View();
     }
   }
 }

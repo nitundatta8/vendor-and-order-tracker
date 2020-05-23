@@ -16,13 +16,18 @@ namespace VendorAndOrderTracker.Controllers
     [HttpGet("/vendors/{vendorId}/order/{orderId}")]
     public ActionResult Show(int vendorId, int orderId)
     {
-      Console.WriteLine("1111");
       Order order = Order.Find(orderId);
       Vendor vendor = Vendor.Find(vendorId);
       Dictionary<string, object> model = new Dictionary<string, object>();
       model.Add("order", order);
       model.Add("vendor", vendor);
       return View(model);
+    }
+    [HttpPost("/orders/delete")]
+    public ActionResult DeleteAll()
+    {
+      Order.ClearAll();
+      return View();
     }
 
   }

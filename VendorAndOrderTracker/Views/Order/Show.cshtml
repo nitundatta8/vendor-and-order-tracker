@@ -4,10 +4,18 @@
 @using VendorAndOrderTracker.Models;
 <h1>Order Details: </h1>
 
-<h2>@Model["order"].Title</h2>
+<h4>Order Title: @Model["order"].Title</h4>
+<h4>Description: @Model["order"].OrderDescription</h4>
+<h4>Price: $@Model["order"].Price.00</h4>
+<h4>Date: @Model["order"].Date</h4>
 <h3>Vendor: @Model["vendor"].VendorName</h3>
-
 <br>
+<h4><a href='/vendors/@Model["vendor"].Id/order/new'>Add another order</a><h4>
+ <a href='/vendors/@Model["vendor"].Id'><button class="btn btn-success" type="button">Back To order list</button></a>
+ <a href='/vendors'><button class="btn btn-success" type="button">Back To Vendor List</button></a>    
 
-
-<a href='/vendors/@Model["vendor"].Id/order/new'>Add another order</a>
+@* <form action="/orders/delete" method="post">
+  <button class="btn btn-success" type="submit">Clear All</button>
+ 
+</form>  *@
+  

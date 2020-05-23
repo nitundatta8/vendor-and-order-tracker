@@ -7,10 +7,11 @@
 <ol>
   @foreach (var order in @Model["order"])  
   {
-    <li><a href='/vendors/@Model["vendor"].Id/order/@order.Id'>@order.Title</a></li> 
-      
-      
+    <li class="center"><h4><a href='/vendors/@Model["vendor"].Id/order/@order.Id'>@order.Title</a></h4></li> 
   }
 </ol>
+<p>
+  <h3><a href='/vendors/@Model["vendor"].Id/order/new'><button class="btn btn-success">Add order</button></a></h3>
+  <h3><a href='/'><button class="btn btn-success">Back</button></a></h3>
+</p>
 
-<p><a href='/vendors/@Model["vendor"].Id/order/new'>Add order</a></p>
