@@ -1,20 +1,24 @@
+img{
+  border-radius:1em;
+  border:0.16em solid rgba(255,255,255,0);
+  box-shadow: rgb(247, 182, 98) 8px;
+}
+
+
 
 body {
-  background-color: green;
-  background: rgb(227, 247, 204);
+  
+  background: #f1f1f1;
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover;
   display: block;
-  padding: 1%;
+  padding: 2%;
   min-height: 100%;
   background-attachment: fixed;
   margin: 0;
   text-align: center;
 }
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
+body p {
+color: whitesmoke;
 }
