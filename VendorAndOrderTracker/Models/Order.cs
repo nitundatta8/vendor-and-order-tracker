@@ -9,14 +9,16 @@ namespace VendorAndOrderTracker.Models
     public int Price { get; set; }
     public string Date { get; set; }
     public int Id { get; }
+    public bool Paid { get; set; }
     private static List<Order> _orderList = new List<Order>() { };
 
-    public Order(string title, string description, int price, string date)
+    public Order(string title, string description, int price, string date, bool paid)
     {
       Title = title;
       OrderDescription = description;
       Price = price;
       Date = date;
+      Paid = paid;
       _orderList.Add(this);
       Id = _orderList.Count;
     }
